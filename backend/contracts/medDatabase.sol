@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "@openzeppelin/contracts/utils/Strings.sol"; 
 contract MedicalRecords {
 
     // Struct to hold patient medical data
@@ -19,6 +20,25 @@ contract MedicalRecords {
     constructor( address _doctor) {
         owner = msg.sender;
         addNewDoctor(_doctor);  // Only the owner can add the first doctor
+
+        //add initial random data
+        // string memory record = "Medical record for patient 1";
+        // updateRecordByPatient(record);  
+        // record = "Medical record for patient 2";
+        // updateRecordByPatient(record);  
+        // record = "Medical record for patient 3";
+        // updateRecordByPatient(record);
+
+        for (uint8 i=0;i<=10;i++){
+            //random records
+            
+            string memory s=Strings.toString(i);
+            patients[0x8bD0A4C1887cD12B07043F1F9bCa97D611C97233].medicalData.push(s);
+            patients[0xBC51720Ea34de281A64896bD7B792BbC6bbf85df].medicalData.push(s);
+            patients[0x3a94bD23Eb39cd8083A31C0e802F7f724e95b6c2].medicalData.push(s);
+            patients[0x7BEb7983B03e75B4b7F62E2B13256Aec92C223Fa].medicalData.push(s);
+            patients[0xBa02bBDffcba023572EbcACad22d3755704903ce].medicalData.push(s);
+        }
     }
 
     // Modifiers
@@ -47,6 +67,17 @@ contract MedicalRecords {
     function updateRecordByPatient(string memory _record) public  { //if not exists ,this will create it.
         patients[msg.sender].medicalData.push(_record);
         // Patient updates their own record, no need to update the doctor
+    }
+    function deleteRecord(address _patient, uint256 index) public onlyDoctor{
+        require(index < patients[_patient].medicalData.length, "Record does not exist");
+        
+        patients[_patient].medicalData[index]=patients[_patient].medicalData[patients[_patient].medicalData.length-1];
+        patients[_patient].medicalData.pop();
+    }
+    function deletePatient(address _patient) public onlyOwner{
+        require(_patient != msg.sender, "Can't delete your own record");
+        patients[_patient].medicalData = new string[](0);
+        patients[_patient].doctors = new address[](0);
     }
 
     // Function for a doctor to update a patient's medical record
@@ -86,5 +117,12 @@ contract MedicalRecords {
         require(msg.sender == _patient || verifiedDoctors[msg.sender], "Access denied: Only patient or doctor can view doctors");
         return patients[_patient].doctors;
     }
+
     
 }
+
+
+
+//contract address : 0xccA081c8989a41a7bE645c4f377d6B3c85d25686
+//current doctors : 0xBC51720Ea34de281A64896bD7B792BbC6bbf85df , 0x3a94bD23Eb39cd8083A31C0e802F7f724e95b6c2 
+//current owner : 0x3a94bD23Eb39cd8083A31C0e802F7f724e95b6c2
