@@ -1,7 +1,7 @@
 // Navbar.js
 import React from 'react';
 import './Navbar.css'; // Importing the CSS file
-import logo from "../medblock-high-resolution-logo (1).png";
+import logo from "../assets/medblock-high-resolution-logo (1).png";
 const Navbar = () => {
     return (
         <nav className="navbar">

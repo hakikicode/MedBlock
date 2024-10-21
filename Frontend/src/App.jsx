@@ -2,17 +2,17 @@ import { useState } from "react";
 
 import "./App.css";
 import { Link } from "react-scroll";
-import vid from "./d.mp4";
-import logo from "./medblock-high-resolution-logo (1).png";
+import vid from "./assets/d.mp4";
+import logo from "./assets/medblock-high-resolution-logo (1).png";
 import Card from "./Components/Card";
-//import Web3AuthComponent from "./Components/Web3Auth";
+
 import TypeWriterEffect from "react-typewriter-effect";
 import Navbar from "./Components/Navbar";
-import doc from "./download (24).jpeg"
-import patient from "./download (25).jpeg"
+import doc from "./assets/download (24).jpeg"
+import patient from "./assets/download (25).jpeg"
 import Footer from "./Components/Footer";
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Web3AuthComponent from "./Components/Web3Auth";
+import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
+//import Web3AuthComponent from "./Components/Web3Auth";
 function App() {
   return (
     <>
@@ -65,12 +65,12 @@ function App() {
             repeat={true}
             typeSpeed={80}
             nextTextDelay={5000}
-            multiText={["Decentralised", "Secure", "Accessible"]}
+            multiText={["Safe", "Secure", "Accessible"]}
           />
         </h2>
         <h3 className="welcome-3">
-          "Making your medical records easy to access<br></br> Totally
-          transparent, all in one place."
+          "Making your medical records easy to access<br></br> 
+          Totally transparent, all in one place."
         </h3>
       </div>
 
@@ -131,11 +131,11 @@ function App() {
               </li>
           </ul>
       </nav>
-      <Switch>
+      {<Switch>
           
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-      </Switch>
+      </Switch> }
       <Footer /> 
   </Router>
 
