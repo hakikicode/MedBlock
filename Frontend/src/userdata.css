@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+@font-face {
+    font-family: "poppins";
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+  }
+
+  h1, h2{
+    font-family: 'Poppins', sans-serif;
+  }
+  h2,h3,h4,h5{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+.education-container:hover,
+.volunteer-container:hover,
+.project-container:hover,
+.experience-container:hover,
+.certification-container:hover{
+    transition: 0.5s;
+    background-color: rgba(20, 24, 87, 0.619);
+    border: 2px solid rgba(255, 255, 255, 0.509);
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.811) -6px -2px 12px 0px;
+
+    transform:
+        perspective(55em) rotateY(-5deg);
+}
+
+
+.project-content, .experience-content, .education-content, .volunteer-content, .certification-content {
+    overflow: auto;
+    padding: 20px;
+    margin: 10px;
+    width: 75%;
+    display: flex;    
+   scroll-snap-type: x mandatory;
+   scrollbar-arrow-color: aliceblue;
+    color: white;
+}
+
+.project-container, .experience-container, .education-container, .volunteer-container, .certification-container {
+    padding: 20px;
+    margin: 20px;
+    width: 400px;
+    height: max-content;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    
+    transition-duration: 1s;
+}
+
+.project-container a{
+    color: white;
+    text-decoration: none;
+}
+
+.project-container a:hover{
+    color: rgb(93, 204, 244);
+    text-decoration: underline;
+}
+
+.mainPic{
+    width: 95%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1000px) {
+    h1{
+        font-size: 1.4rem;
+    }
+    h2{
+        font-size: 1.1rem;
+    }
+    h3{
+        font-size: 0.9rem;
+    }
+    h4{
+        font-size: 0.8rem;
+    }
+
+    .education-container,.project-container, .experience-container, .volunteer-container{
+        width: 90%;
+        padding: 20px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+    .education-content, .project-content, .experience-content, .volunteer-content{
+        width: 80%;
+        overflow: auto;
+        display: flex;
+        scroll-snap-type: x mandatory;
+    }
+    .container {
+        width: 80%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+}

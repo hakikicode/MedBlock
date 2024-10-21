@@ -1,42 +1,251 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+
+
+
+.video {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  width: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.welcome {
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 1700; /* Bold weight */
+  font-size: 56px;  /* Suitable size for app name */
+  letter-spacing: 1.5px; /* Adjust letter spacing */
+  color: #9deeab; /* Example color */
+}
+
+.welcome-2 {
+  width: max-content;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  position: absolute;
+  top: 40%;
+  
+  transition-duration: 1s;
+  left: 10%;
+}
+
+.welcome-2:hover {
+  transition: 1s;
+  font-display: bold;
+  box-sizing: content-box;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  width: fit-content;
+  cursor: pointer;
+  color: antiquewhite;
+}
+
+.welcome-3 {
+  
+  width: max-content;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  position: absolute;
+  top: 60%;
+  
+  transition-duration: 1s;
+  left: 10%;
+}
+.app-navbar {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(13, 0, 70, 1);
+  padding-right: 30px;
+  margin-bottom: 20px;
+  z-index: 5;
+}
+
+.app-navbar a {
+  color: white;
+  float: right;
+  padding: 16px 20px;
+  text-decoration: none;
   text-align: center;
+  font-size: 18px;
+  font-family: monospace;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.app-navbar a:hover {
+  background-color: rgba(2, 0, 14, 0.852);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.pfp {
+    width: 300px;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+    
+}
+
+.experience {
+  padding: 10px;
+  background: linear-gradient(109.6deg, rgb(9, 9, 121) 11.2%, rgb(144, 6, 161) 53.7%, rgb(0, 212, 255) 100.2%);
+  background-size: 600% 100%;
+  animation: gradient 8s linear infinite;
+  animation-direction: alternate;
+  width: 100%;
+}
+
+.astro-4 {
+  width: 160px;
+  position: absolute;
+  right: 20%;
+  padding: 5px;
+  overflow: hidden;
+  margin: 5px;
+  transform: translatey(0px);
+  animation: float 10s ease-in-out infinite;
+}
+
+.sphere {
+  width: 160px;
+  position: absolute;
+  left: 5%;
+  padding: 5px;
+  overflow: hidden;
+  margin: 5px;
+  transform: translatey(0px);
+  animation: float 7s ease-in-out infinite;
+}
+
+
+.section-heading {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: monospace;
+  color: white;
+  
+  transition-duration: 1s;
+}
+
+.section-heading:hover {
+  transition: 1s;
+  font-size: 3.2rem;
+  font-display: bold;
+  box-shadow: 0px 5px 0px rgba(255, 255, 255, 0.616);
+  width: fit-content;
+  cursor: pointer;
+  color: rgb(232, 145, 252);
+}
+
+@media screen and (max-width: 1000px) {
+  .app-navbar a {
+      color: white;
+      float: center;
+      padding: 10px 14px;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+      font-family: monospace;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app-navbar a:hover {
+      color: rgb(232, 145, 252);
+      transition: 0.5s;
+      
+  }
+  .app-navbar {
+      width: 100%;
+  }
+
+  .pfp {
+      width: 180px;
+      top: 20%;
+      left: 35%;
+      float: center;
+  }
+
+  #video {
+      width: max-content;
+      height: 100%;
+  }
+
+  .section-heading {
+      font-size: 2rem;
+  }
+
+  .section-heading:hover {
+      font-size: 2.3rem;
+  }
+
+  .welcome {
+      padding: 20px;
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      font-size: 1.5rem;
+      align-self: center;
+  }
+
+  .welcome-2 {
+      padding: 20px;
+      position: absolute;
+      top: 48%;
+      align-self: center;
+      font-size: 1.2rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-navbar {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(13, 0, 70, 1);
+  padding-right: 30px;
+  margin-bottom: 20px;
+  z-index: 5;
 }
 
-.card {
-  padding: 2em;
+.app-navbar a {
+  color: white;
+  float: right;
+  padding: 16px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-family: monospace;
 }
 
-.read-the-docs {
-  color: #888;
+
+.app-navbar a:hover {
+  background-color: rgba(2, 0, 14, 0.852);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
 }
