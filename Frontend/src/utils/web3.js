@@ -1,71 +1,143 @@
 import Web3 from "web3";
-import skinMarketABI from "../components/abis/skinMarketABI.json";
-import skinOwnerABI from "../components/abis/skinOwnershipABI.json";
+import medicalRecordsABI from "../contracts/abi.json";
 
-// Define the Ethereum interface with the request method
-// interface Ethereum {
-// 	request: (args: {
-// 		method: string;
-// 		params?: Array<unknown>;
-// 	}) => Promise<unknown>;
-// }
+const contractAddress = "0xccA081c8989a41a7bE645c4f377d6B3c85d25686"; // Replace with the deployed contract address
 
-// // Extend the Window interface to include ethereum
-// interface Window {
-// 	ethereum?: Ethereum;
-// }
-
-// declare let window: Window;
-export function Utils(){
-	
-	if(window.ethereum){
-		const web3=new Web3(window.ethereum);
-		return web3;
-	}
+// Initialize Web3 and contract
+export function Utils() {
+    if (window.ethereum) {
+        const web3 = new Web3(window.ethereum);
+        return web3;
+    }
 }
+
+// Initialize the contract instance
+export const medicalRecordsContract = () => {
+    if (window.ethereum) {
+        const web3 = new Web3(window.ethereum);
+        return new web3.eth.Contract(medicalRecordsABI, contractAddress);
+    } else {
+        throw new Error("MetaMask is not installed. Please install MetaMask and try again.");
+    }
+};
+
+// Get connected accounts
 export const getAccounts = async () => {
-	if (window.ethereum) {
-		try {
-			// Request account access if needed
-			const accounts = await window.ethereum.request({
-				method: "eth_requestAccounts",
-			});
-
-			// Type assertion to tell TypeScript that accounts is an array of strings
-			if (Array.isArray(accounts) && typeof accounts[0] === "string") {
-				return accounts;
-			} else {
-				throw new Error("Failed to retrieve account");
-			}
-		} catch (error) {
-			throw new Error(`User denied account access: ${error}`);
-		}
-	} else {
-		throw new Error(
-			"MetaMask is not installed. Please install MetaMask and try again."
-		);
-	}
+    if (window.ethereum) {
+        try {
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts",
+            });
+            return accounts;
+        } catch (error) {
+            throw new Error(`Error fetching accounts: ${error.message}`);
+        }
+    } else {
+        throw new Error("MetaMask is not installed.");
+    }
 };
 
-export const skinMarket = () => {
-	if (window.ethereum) {
-		const web3 = new Web3(window.ethereum);
-		const skinMarketAdd = "0x9B4d2b5609Bc13f8419cDE5CD3f66Ee713E77009";
-		return new web3.eth.Contract(skinMarketABI, skinMarketAdd);
-	} else {
-		throw new Error(
-			"MetaMask is not installed. Please install MetaMask and try again."
-		);
-	}
+// Add a new doctor (only owner can call this)
+export const addNewDoctor = async (doctorAddress) => {
+    const contract = medicalRecordsContract();
+    const accounts = await getAccounts();
+
+    try {
+        const response = await contract.methods
+            .addNewDoctor(doctorAddress)
+            .send({ from: accounts[0] });
+        return response;
+    } catch (error) {
+        throw new Error(`Error adding doctor: ${error.message}`);
+    }
 };
-export const skinOwner=()=>{
-	if (window.ethereum) {
-		const web3 = new Web3(window.ethereum);
-		const skinOwnershipAdd = "0x7161636060D3f7692a3CF2ED395A29d05763b2e4";
-		return new web3.eth.Contract(skinOwnerABI, skinOwnershipAdd);
-	} else {
-		throw new Error(
-			"MetaMask is not installed. Please install MetaMask and try again."
-		);
-	}
-}
+
+// Update medical record by patient
+export const updateRecordByPatient = async (record) => {
+    const contract = medicalRecordsContract();
+    const accounts = await getAccounts();
+
+    try {
+        const response = await contract.methods
+            .updateRecordByPatient(record)
+            .send({ from: accounts[0] });
+        return response;
+    } catch (error) {
+        throw new Error(`Error updating record: ${error.message}`);
+    }
+};
+
+// Update medical record by doctor
+export const updateRecordByDoctor = async (patientAddress, record) => {
+    const contract = medicalRecordsContract();
+    const accounts = await getAccounts();
+
+    try {
+        const response = await contract.methods
+            .updateRecordByDoctor(patientAddress, record)
+            .send({ from: accounts[0] });
+        return response;
+    } catch (error) {
+        throw new Error(`Error updating patient's record: ${error.message}`);
+    }
+};
+
+// Get medical records of a patient
+export const getMedicalRecord = async (patientAddress) => {
+    const contract = medicalRecordsContract();
+    const accounts = await getAccounts();
+
+    try {
+        const records = await contract.methods
+            .getMedicalRecord(patientAddress)
+            .call({ from: accounts[0] });
+        return records;
+    } catch (error) {
+        throw new Error(`Error fetching medical records: ${error.message}`);
+    }
+};
+
+// Get doctors treating a patient
+export const getDoctors = async (patientAddress) => {
+    const contract = medicalRecordsContract();
+    const accounts = await getAccounts();
+
+    try {
+        const doctors = await contract.methods
+            .getDoctors(patientAddress)
+            .call({ from: accounts[0] });
+        return doctors;
+    } catch (error) {
+        throw new Error(`Error fetching doctors: ${error.message}`);
+    }
+};
+
+// Delete a patient's medical record (only owner)
+export const deletePatient = async (patientAddress) => {
+    const contract = medicalRecordsContract();
+    const accounts = await getAccounts();
+
+    try {
+        const response = await contract.methods
+            .deletePatient(patientAddress)
+            .send({ from: accounts[0] });
+        return response;
+    } catch (error) {
+        throw new Error(`Error deleting patient record: ${error.message}`);
+    }
+};
+
+// Delete a specific medical record by index (only doctor)
+export const deleteRecord = async (patientAddress, index) => {
+    const contract = medicalRecordsContract();
+    const accounts = await getAccounts();
+
+    try {
+        const response = await contract.methods
+            .deleteRecord(patientAddress, index)
+            .send({ from: accounts[0] });
+        return response;
+    } catch (error) {
+        throw new Error(`Error deleting record: ${error.message}`);
+    }
+};

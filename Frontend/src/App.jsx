@@ -11,7 +11,7 @@ import Navbar from "./Components/Navbar";
 import doc from "./assets/download (24).jpeg"
 import patient from "./assets/download (25).jpeg"
 import Footer from "./Components/Footer";
-import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import Web3AuthComponent from "./Components/Web3Auth";
 function App() {
   return (
@@ -120,7 +120,7 @@ function App() {
 
 
       <Router>
-      <nav>
+      {/* <nav>
           <ul>
             
               <li>
@@ -136,7 +136,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
       </Switch> }
-      <Footer /> 
+      <Footer />  */}
   </Router>
 
 
