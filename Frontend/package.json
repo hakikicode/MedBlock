@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "mongodb": "^6.9.0",
+=======
+>>>>>>> 5d42a147e9db2fa6b270b04ba035396b7d8f52e5
     "@web3auth/base": "^9.2.3",
     "@web3auth/ethereum-provider": "^9.2.3",
     "@web3auth/modal": "^9.2.5",
@@ -20,7 +23,8 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "react-scroll": "^1.9.0",
-    "react-typewriter-effect": "^1.1.0"
+    "react-typewriter-effect": "^1.1.0",
+    "web3": "^4.13.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
