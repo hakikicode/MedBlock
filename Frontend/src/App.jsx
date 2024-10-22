@@ -11,8 +11,8 @@ import Navbar from "./Components/Navbar";
 import doc from "./download (24).jpeg"
 import patient from "./download (25).jpeg"
 import Footer from "./Components/Footer";
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Web3AuthComponent from "./Components/Web3Auth";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import Web3AuthComponent from "./Components/Web3Auth";
 function App() {
   return (
     <>
@@ -119,7 +119,7 @@ function App() {
       <Footer/>
 
 
-      <Router>
+      {/* <Router>
       <nav>
           <ul>
             
@@ -137,7 +137,7 @@ function App() {
           <Route path="/contact" component={Contact} />
       </Switch>
       <Footer /> 
-  </Router>
+  </Router> */}
 
 
 
