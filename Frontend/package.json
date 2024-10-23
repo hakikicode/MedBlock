@@ -10,10 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "mongodb": "^6.9.0",
-=======
->>>>>>> 5d42a147e9db2fa6b270b04ba035396b7d8f52e5
     "@web3auth/base": "^9.2.3",
     "@web3auth/ethereum-provider": "^9.2.3",
     "@web3auth/modal": "^9.2.5",

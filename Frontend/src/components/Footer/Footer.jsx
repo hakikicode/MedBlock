@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css'; // Import the CSS file
-import logo from "../assets/medblock-high-resolution-logo (1).png"
+import logo from "../../assets/medblock-high-resolution-logo (1).png"
 
 const Footer = () => {
     return (
