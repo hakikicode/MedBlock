@@ -177,6 +177,7 @@ import patient from "./assets/download (25).jpeg";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom"; // Added Routes and useNavigate
 import Doctor from "./components/DoctorPage/Doctor"; // Correct path to Doctor component
+// import Web3AuthComponent from "./Components/Web3Auth";
 //import Patient from "./components/Patient/Patient"; // Import Patient component
 
 function App() {
@@ -312,6 +313,7 @@ function MainApp() {
         <Route path="/" element={<App />} />
         <Route path="/Doctor" element={<Doctor />} />
         {/* <Route path="/Patient" element={<Patient />} /> */}
+        {/* <Route path="/Web3" element={<Web3AuthComponent />} /> */}
       </Routes>
     </Router>
   );
