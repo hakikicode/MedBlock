@@ -73,9 +73,23 @@ export const updateRecordByDoctor = async (patientAddress, record) => {
     const accounts = await getAccounts();
 
     try {
+
+        //const gasPrice = await web3.eth.getGasPrice();
+		// const gasLimit = await updateRecordByDoctor.methods
+        //     .updateRecordByDoctor(patientAddress, record)
+        //     .estimateGas({
+        //     from: connectedAccount		
+		// });
+
         const response = await contract.methods
             .updateRecordByDoctor(patientAddress, record)
-            .send({ from: accounts[0] });
+            .send({ from: accounts[0],
+               
+                
+             });
+
+
+             
         return response;
     } catch (error) {
         throw new Error(`Error updating patient's record: ${error.message}`);
