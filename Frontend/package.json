@@ -10,18 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "mongodb": "^6.9.0",
     "@web3auth/base": "^9.2.3",
     "@web3auth/ethereum-provider": "^9.2.3",
     "@web3auth/modal": "^9.2.5",
     "@web3auth/react-native-sdk": "^7.0.1",
+    "axios": "^1.7.7",
+    "axois": "^0.0.1-security",
     "ethers": "^6.13.4",
+    "mongodb": "^6.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "react-scroll": "^1.9.0",
     "react-typewriter-effect": "^1.1.0",
-    "web3": "^4.13.0"
+    "web3": "^4.13.0",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

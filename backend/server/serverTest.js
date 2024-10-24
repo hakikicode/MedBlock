@@ -56,3 +56,8 @@ axios.get('http://localhost:8000/api/queryRecords?email=ajitesh@gmail.com')
 .catch((error) => {
   console.error("Error in querying record:", error);
 });
+
+
+axios.get('http://localhost:8000/getAllPatients').then((response)=>{
+  console.log(response.data);
+})
