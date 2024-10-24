@@ -89,7 +89,7 @@ export const updateRecordByDoctor = async (patientAddress, record) => {
              });
 
 
-             
+
         return response;
     } catch (error) {
         throw new Error(`Error updating patient's record: ${error.message}`);
@@ -97,14 +97,14 @@ export const updateRecordByDoctor = async (patientAddress, record) => {
 };
 
 // Get medical records of a patient
-export const getMedicalRecord = async (patientAddress) => {
+export const getMedicalRecord = async (patientAddress,DoctorAddress) => {
     const contract = medicalRecordsContract();
     const accounts = await getAccounts();
 
     try {
         const records = await contract.methods
             .getMedicalRecord(patientAddress)
-            .call({ from: accounts[0] });
+            .call({ from: DoctorAddress });
         return records;
     } catch (error) {
         throw new Error(`Error fetching medical records: ${error.message}`);

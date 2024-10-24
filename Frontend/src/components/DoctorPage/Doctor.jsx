@@ -245,7 +245,8 @@ function Doctor() {
     try {
       const accounts = await getAccounts();
       setAccount(accounts[0]);
-      console.log("Connected account:", accounts[0]);
+
+      console.log("Connected account:", account);
     } catch (error) {
       console.error("Error connecting wallet:", error);
     }
@@ -285,7 +286,7 @@ function Doctor() {
         console.log("No public address provided");
         return;
       }
-      const medicalRecord = await getMedicalRecord(publicAddress);
+      const medicalRecord = await getMedicalRecord(publicAddress,account);
       console.log("Medical Record:", medicalRecord);
       return medicalRecord; // Return the fetched medical record
     } catch (e) {
