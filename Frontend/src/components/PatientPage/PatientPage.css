@@ -1,0 +1,492 @@
+/* Container for the entire page */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+.patient-page-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 25%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar h3 {
+    margin: 10px 0;
+    font-size: 24px;
+  }
+  
+  .sidebar p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  /* Main content styling */
+  .main-content {
+    width: 75%;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: #fff;
+  }
+  
+  /* Medical Records Section */
+  .medical-records {
+    margin-bottom: 30px;
+  }
+  
+  .records-content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Health Tips Section */
+  .health-tips {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #333;
+    padding: 20px;
+    background-color: #e6f7ff;
+    border-left: 4px solid #1890ff;
+  }
+  
+  /* Body Organs Animations */
+  .body-organs {
+    margin-bottom: 30px;
+  }
+  
+  .icons-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  
+  
+
+  /* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Health Tips Floating */
+.health-tips {
+  animation: float 3s ease-in-out infinite;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.health-tips p {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #444;
+  transition: transform 0.3s ease;
+}
+
+/* Body Organs Floating */
+.icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.organ-icon {
+  width: 50px;
+  height: 50px;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover Effects */
+.health-tips p:hover,
+.organ-icon:hover {
+  transform: scale(1.1);
+}
+
+.organ-icon:hover {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.app-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.welcome-2, .welcome-3 {
+  margin: 20px;
+}
+
+.pfp-container {
+  margin-top: 20px;
+}
+
+.pfp {
+  width: 150px;
+  height: auto;
+}
+
+.search-bar {
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-result {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.search-result:hover {
+  transform: scale(1.05);
+}
+
+.result-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.patient-details {
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: left;
+  width: 80%;
+}
+
+.patient-image {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.medical-records {
+  margin-top: 20px;
+}
+
+.medical-records p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+
+
+
+.video {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  width: 100%;
+  color: rgb(255, 255, 255);
+  display: 'flex';
+  padding: 20;
+  gap: '40px';
+  justify-content: 'center';
+  align-items: 'center';
+  height: '80vh';
+  background-color: '#4B0082';/* Purplish blue background */
+  color: 'white';
+}
+
+.welcome {
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 1700; /* Bold weight */
+  font-size: 56px;  /* Suitable size for app name */
+  letter-spacing: 1.5px; /* Adjust letter spacing */
+  color: #9deeab; /* Example color */
+}
+
+.welcome-2 {
+  width: max-content;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  position: absolute;
+  top: 40%;
+  
+  transition-duration: 1s;
+  left: 10%;
+}
+
+.welcome-2:hover {
+  transition: 1s;
+  font-display: bold;
+  box-sizing: content-box;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  width: fit-content;
+  cursor: pointer;
+  color: antiquewhite;
+}
+
+.welcome-3 {
+  
+  width: max-content;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  position: absolute;
+  top: 60%;
+  
+  transition-duration: 1s;
+  left: 10%;
+}
+.app-navbar {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(13, 0, 70, 1);
+  padding-right: 30px;
+  margin-bottom: 20px;
+  z-index: 5;
+}
+
+.app-navbar a {
+  color: white;
+  float: right;
+  padding: 16px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+
+.app-navbar a:hover {
+  background-color: rgba(2, 0, 14, 0.852);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.pfp {
+    width: 300px;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+    
+}
+
+.experience {
+  padding: 10px;
+  background: linear-gradient(109.6deg, rgb(9, 9, 121) 11.2%, rgb(144, 6, 161) 53.7%, rgb(0, 212, 255) 100.2%);
+  background-size: 600% 100%;
+  animation: gradient 8s linear infinite;
+  animation-direction: alternate;
+  width: 100%;
+}
+
+.astro-4 {
+  width: 160px;
+  position: absolute;
+  right: 20%;
+  padding: 5px;
+  overflow: hidden;
+  margin: 5px;
+  transform: translatey(0px);
+  animation: float 10s ease-in-out infinite;
+}
+
+.sphere {
+  width: 160px;
+  position: absolute;
+  left: 5%;
+  padding: 5px;
+  overflow: hidden;
+  margin: 5px;
+  transform: translatey(0px);
+  animation: float 7s ease-in-out infinite;
+}
+
+
+.section-heading {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: monospace;
+  color: white;
+  
+  transition-duration: 1s;
+}
+
+.section-heading:hover {
+  transition: 1s;
+  font-size: 3.2rem;
+  font-display: bold;
+  box-shadow: 0px 5px 0px rgba(255, 255, 255, 0.616);
+  width: fit-content;
+  cursor: pointer;
+  color: rgb(232, 145, 252);
+}
+
+@media screen and (max-width: 1000px) {
+  .app-navbar a {
+      color: white;
+      float: center;
+      padding: 10px 14px;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+      font-family: monospace;
+  }
+
+  .app-navbar a:hover {
+      color: rgb(232, 145, 252);
+      transition: 0.5s;
+      
+  }
+  .app-navbar {
+      width: 100%;
+  }
+
+  .pfp {
+      width: 180px;
+      top: 20%;
+      left: 35%;
+      float: center;
+  }
+
+  #video {
+      width: max-content;
+      height: 100%;
+  }
+
+  .section-heading {
+      font-size: 2rem;
+  }
+
+  .section-heading:hover {
+      font-size: 2.3rem;
+  }
+
+  .welcome {
+      padding: 20px;
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      font-size: 1.5rem;
+      align-self: center;
+  }
+
+  .welcome-2 {
+      padding: 20px;
+      position: absolute;
+      top: 48%;
+      align-self: center;
+      font-size: 1.2rem;
+  }
+}
+
+.app-navbar {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(13, 0, 70, 1);
+  padding-right: 30px;
+  margin-bottom: 20px;
+  z-index: 5;
+}
+
+.app-navbar a {
+  color: white;
+  float: right;
+  padding: 16px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+
+.app-navbar a:hover {
+  background-color: rgba(2, 0, 14, 0.852);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}

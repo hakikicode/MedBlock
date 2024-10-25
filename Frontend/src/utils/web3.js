@@ -45,7 +45,9 @@ export const addNewDoctor = async (doctorAddress) => {
     try {
         const response = await contract.methods
             .addNewDoctor(doctorAddress)
-            .send({ from: accounts[0] });
+            .send({ from: 0x3a94bD23Eb39cd8083A31C0e802F7f724e95b6c2 });
+
+            console.log("doctor added successfully");
         return response;
     } catch (error) {
         throw new Error(`Error adding doctor: ${error.message}`);
@@ -99,7 +101,7 @@ export const updateRecordByDoctor = async (patientAddress, record) => {
 // Get medical records of a patient
 export const getMedicalRecord = async (patientAddress,DoctorAddress) => {
     const contract = medicalRecordsContract();
-    const accounts = await getAccounts();
+    
 
     try {
         const records = await contract.methods
@@ -155,3 +157,4 @@ export const deleteRecord = async (patientAddress, index) => {
         throw new Error(`Error deleting record: ${error.message}`);
     }
 };
+

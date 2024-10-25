@@ -180,7 +180,10 @@ import Doctor from "./components/DoctorPage/Doctor"; // Correct path to Doctor c
 // import Web3AuthComponent from "./Components/Web3Auth";
 //import Patient from "./components/Patient/Patient"; // Import Patient component
 
+import Login from "./components/Login/login";
+
 import PatientSignUp from "./components/SignUp/patientSignUp";
+import PatientPage from "./components/PatientPage/patient";
 
 function App() {
   const navigate = useNavigate(); // Hook to navigate to routes
@@ -290,6 +293,7 @@ function App() {
         />
       </div>
       <PatientSignUp/>
+      <Login/>
 
       <Footer />
     </>
@@ -317,6 +321,7 @@ function MainApp() {
         <Route path="/Doctor" element={<Doctor />} />
         {/* <Route path="/Patient" element={<Patient />} /> */}
         {/* <Route path="/Web3" element={<Web3AuthComponent />} /> */}
+        <Route path="/Patient" element={<PatientPage />} />
       </Routes>
     </Router>
   );

@@ -61,3 +61,8 @@ axios.get('http://localhost:8000/api/queryRecords?email=ajitesh@gmail.com')
 axios.get('http://localhost:8000/getAllPatients').then((response)=>{
   console.log(response.data);
 })
+
+
+
+
+
