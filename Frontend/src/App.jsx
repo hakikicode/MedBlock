@@ -17,6 +17,7 @@ import Patient from "./components/PatientPage/patient"; // Import Patient compon
 import Login from "./components/Login/login";
 import PatientPage from "./components/PatientPage/patient";
 
+import DoctorSignUp from "./components/SignUp/DoctorSignUp";
 function App() {
   const navigate = useNavigate(); // Hook to navigate to routes
 
@@ -98,7 +99,7 @@ function App() {
           imageSrc={doc}
           text1="Doctor"
           text2="Click to Login"
-          onClick={() => handleClick("/Doctor")} // Navigates to /Doctor route
+          onClick={() => handleClick("/DoctorSignUp")} // Navigates to /Doctor route
         />
         <Card
           imageSrc={patient}
@@ -164,6 +165,7 @@ function MainApp() {
         <Route path="/Patient" element={<Patient />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Patient" element={<PatientPage />} />
+        <Route path="/DoctorSignUp" element={<DoctorSignUp></DoctorSignUp>} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,101 @@
+/* DoctorLogin.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background: linear-gradient(135deg, #6c63ff, #5a54c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .doctor-login-container {
+    position: relative;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .password-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid #6c63ff;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .password-input:focus {
+    border-color: #5a54c4;
+    box-shadow: 0 0 8px rgba(92, 89, 230, 0.5);
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #6c63ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-button:hover {
+    background: #5a54c4;
+    transform: scale(1.05);
+  }
+  
+  .login-button:active {
+    transform: scale(0.98);
+  }
+  
+  .error-message {
+    margin-top: 15px;
+    color: #ff4d4f;
+    font-size: 14px;
+    font-weight: bold;
+    animation: shake 0.3s ease-in-out;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
+  

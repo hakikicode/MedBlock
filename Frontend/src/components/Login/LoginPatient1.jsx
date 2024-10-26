@@ -8,7 +8,7 @@ import vid from "../../assets/d.mp4"
 
 import logo from "../../assets/medblock-high-resolution-logo (1).png"
 
-
+// import "./loginPatient.css"
 const LoginPatient1 = () => {
   const [adhar, setAdhar] = useState("");
   const setNewPatient = usePatients((state) => state.setNewPatient); // Zustand action
@@ -74,7 +74,6 @@ const LoginPatient1 = () => {
         className="login-input"
         maxLength="12"
       />
-      <br/>
       <button onClick={loginPatient}>Login</button>
       <div >
       Don't Have account?
