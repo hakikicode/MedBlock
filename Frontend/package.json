@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@web3auth/base": "^9.2.3",
-    "@web3auth/ethereum-provider": "^9.2.3",
-    "@web3auth/modal": "^9.2.5",
+    "@web3auth/base": "^9.3.0",
+    "@web3auth/default-evm-adapter": "^9.3.0",
+    "@web3auth/ethereum-provider": "^9.3.0",
+    "@web3auth/modal": "^9.3.0",
     "@web3auth/react-native-sdk": "^7.0.1",
     "axios": "^1.7.7",
     "axois": "^0.0.1-security",
@@ -23,7 +24,7 @@
     "react-router-dom": "^6.27.0",
     "react-scroll": "^1.9.0",
     "react-typewriter-effect": "^1.1.0",
-    "web3": "^4.13.0",
+    "web3": "^4.14.0",
     "zustand": "^5.0.0"
   },
   "devDependencies": {
