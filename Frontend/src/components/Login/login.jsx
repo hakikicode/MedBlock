@@ -20,11 +20,11 @@ const Login = () => {
     setAdhar(input);
   };
 
-  const [selectedOption, setSelectedOption] = useState('');
+//   const [selectedOption, setSelectedOption] = useState('');
 
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
-};
+//   const handleChange = (event) => {
+//     setSelectedOption(event.target.value);
+// };
 
   // Function to login the patient by Aadhar
   const loginPatient = async () => {
@@ -73,17 +73,17 @@ const Login = () => {
     </div> */}
 
     <div>
-            {/* Dropdown to select options */}
-            <select className="dropdown1" onChange={handleChange}>
-            <option value="">Select an option</option>
+           
+            {/* <select className="dropdown1" onChange={handleChange}>
+            <option value="">Choose your Login Method</option>
                 <option value="showComponent">Sign Up</option>
                 <option value="hideComponent">Login</option>
             </select>
-
-            {/* Step 3: Conditional rendering */}
+              
+           
             {selectedOption === 'showComponent' && <SignUpPatient />}
-            {selectedOption === 'hideComponent' && <LoginPatient />}
-
+            {selectedOption === 'hideComponent' && <LoginPatient />} */}
+          <LoginPatient1/>
         </div>
 
 
@@ -92,20 +92,20 @@ const Login = () => {
   );
 };
 
-const SignUpPatient = () => {
-  return (
-      <div>
-          <PatientSignUp/>
-      </div>
-  );
-};
+// const SignUpPatient = () => {
+//   return (
+//       <div>
+//           <PatientSignUp/>
+//       </div>
+//   );
+// };
 
-const LoginPatient = () => {
-  return (
-      <div>
-          <LoginPatient1/>
-      </div>
-  );
-};
+// const LoginPatient = () => {
+//   return (
+//       <div>
+//           <LoginPatient1/>
+//       </div>
+//   );
+// };
 
 export default Login;

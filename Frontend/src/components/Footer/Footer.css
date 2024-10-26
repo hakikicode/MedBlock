@@ -1,59 +1,57 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 
-.footer {
-    background-color: #6a5acd; /* Purplish blue background */
+    .footer {
+        position: relative; /* Make the footer fixed at the bottom */
+        bottom: 0;
+        left: 0;
+        width: 85; /* Full width footer */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #101027; /* Slight transparency for floating effect */
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Shadow above the footer */
+        z-index: 1000; /* Ensure the footer is on top of other content */
+        font-family: 'Courier Prime', monospace; /* Apply Courier Prime font */
+    }
     
-   
-    color: white; /* Text color */
- 
+
+
+.footer-logo img {
+    width: 200px; 
+    position: relative;
+    left: 180px;
+    padding: 50px;
+}
+
+.footer-columns {
     display: flex;
-    flex-direction: column;
+    gap: 50px; /* Space between columns */
+    padding: 30px;
+    right: 40px
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footer-column {
+    color: #9deeab; /* Light color for text */
 }
 
-.logo img {
-    max-width: 150px;
-     /* Adjust as necessary */
+.footer-column h4 {
+    margin-bottom: 10px; /* Space below headings */
+    font-weight: bolder;
+    font-size: 24px;
+
 }
 
-.button-column a {
-    color: #483d8b; /* Use the same purplish-blue color */
-    text-decoration: none; /* Remove underline */
-    padding: 5px 0; /* Add some vertical spacing */
-    display: inline-block; /* Allows padding to take effect */
-    font-family: 'Courier Prime', monospace; /* Apply the Courier Prime font */
-    transition: color 0.3s; /* Smooth color transition */
+.footer-column ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
 }
 
-.button-column a:hover {
-    color: #3e2a5a; /* Optional: Change color on hover for effect */
+.footer-column li {
+    margin: 5px 0; /* Space between list items */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.button-column button {
-    background-color: #483d8b; /* Darker shade for buttons */
-    color: white;
-    border: none;
-    padding: 20px;
-    margin: 10px 0;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.button-column button:hover {
-    background-color: #5f9ea0; /* Change on hover */
-}
-
-.rights-reserved {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 0.9em;
+.footer-column li:hover {
+    color: #A4D7E1; /* Change color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }

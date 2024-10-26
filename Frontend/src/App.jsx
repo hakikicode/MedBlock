@@ -202,6 +202,10 @@ function App() {
         </video>
       </div>
 
+      <div className="logo1">
+                    <img src={logo} alt="Logo" />
+                </div>
+
         {/* <div className="app-navbar">
           <Link
             activeClass="active"
@@ -237,28 +241,27 @@ function App() {
           </Link>
         </div> */}
       <div className="app-container1">
+        <div className="intro-text">
         <h2 className="welcome-2">
-          <TypeWriterEffect
-            startDelay={2000}
-            cursorColor="purple"
-            repeat={true}
-            typeSpeed={80}
-            nextTextDelay={5000}
-            multiText={["Safe", "Secure", "Accessible"]}
-          />
+        <div className="typewriter-container">
+    <TypeWriterEffect
+        startDelay={2000}
+        cursorColor="Green"
+        repeat={true}
+        typeSpeed={80}
+        nextTextDelay={5000}
+        multiText={["Safe", "Personalised", "Secure", "Accessible"]}
+    />
+</div>
         </h2>
+          
         <h3 className="welcome-3">
           "Making your medical records easy to access<br></br> Totally transparent,
           all in one place."
         </h3>
-      </div>
-      
-
-      <div className="app-container" id="home1">
-        
+        </div>
+<div className="Login" id="Login">
         <h1>Login Here</h1>
-        
-
         <Card
           imageSrc={doc}
           text1="Doctor"
@@ -271,6 +274,7 @@ function App() {
           text2="Click to Login"
           onClick={() => handleClick("/Login")} // Navigates to /Patient route
         />
+      </div>
       </div>
 
       {/* <div style={styles.appContainer} id="home2">
@@ -293,8 +297,10 @@ function App() {
         />
       </div> */}
       
-        
+        <div id="Footer">
         <Footer />
+        </div>
+        
        
 
     </>

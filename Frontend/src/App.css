@@ -6,6 +6,7 @@
 
 body{
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
 .video {
@@ -32,9 +33,9 @@ body{
 
 .welcome {
   width: max-content;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(182, 21, 21, 0.5);
   padding: 20px;
-  font-family: "Montserrat", sans-serif;
+  
   position: absolute;
   top: 10%;
   left: 10%;
@@ -42,7 +43,7 @@ body{
   font-weight: 1700; /* Bold weight */
   font-size: 56px;  /* Suitable size for app name */
   letter-spacing: 1.5px; /* Adjust letter spacing */
-  color: #9deeab; /* Example color */
+  color: #BBF1C8; /* Light mint green */
 }
 
 .welcome-2 {
@@ -67,12 +68,12 @@ body{
 }
 
 .welcome-3 {
+  position: absolute;
+  top: 400px;
   
-  width: max-content;
   font-family: "Montserrat", sans-serif;
   padding: 20px;
-  position: absolute;
-  top: 60%;
+  
   
   transition-duration: 1s;
   left: 10%;
@@ -107,7 +108,7 @@ body{
 }
 
 .pfp {
-    width: 500px;
+    width: 5px;
     position: absolute;
     top: 1%;
     left: 0%;
@@ -300,4 +301,26 @@ body{
   background-color: transparent; /* No background color */
   color: white; /* Text color for elements within */
   border: none; /* Ensure no border */
+}
+
+.intro-text{
+  position: flex;
+  padding-top: 200px;
+}
+
+.typewriter-container {
+  position: absolute;
+  color: #fcfcfc;/* Replace with the desired text color */
+  font-size: 36px; /* Adjust the font size as needed */
+  top: 300px;
+}
+
+.Login{
+  width: 100%; /* Full width to fill the viewport */
+  display: flex;
+  padding: 20px;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }

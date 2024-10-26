@@ -218,7 +218,7 @@ function Doctor() {
   const [patient, setPatient] = useState(null); // State for selected patient
   const [allPatients, setAllPatients] = useState([]); // State for all fetched patients
   const [searchQuery, setSearchQuery] = useState(''); // Search query state
-  const [searchBy, setSearchBy] = useState('aadhar'); // Search filter option
+  const [searchBy, setSearchBy] = useState('name'); // Search filter option
   const [filteredPatients, setFilteredPatients] = useState([]); // Filtered patients based on search
   const [medicalRecords, setMedicalRecords] = useState([]); // State for storing medical records
   const [newRecord, setNewRecord] = useState(''); // New record input
@@ -372,14 +372,7 @@ function Doctor() {
 
      <div className="login-container">
      
-      <div className="search-filter">
-        <label htmlFor="searchBy">Search by:</label>
-        <select id="searchBy" value={searchBy} onChange={(e) => setSearchBy(e.target.value)}>
-          <option value="aadhar">Aadhar</option>
-          <option value="name">Name</option>
-          <option value="email">Email</option>
-        </select>
-      </div>
+      
 
       {/* Search bar */}
       <input
@@ -390,6 +383,14 @@ function Doctor() {
         placeholder={`Search by ${searchBy}`}
         className="search-bar"
       />
+      <div className="search-filter">
+        <label htmlFor="searchBy">Search by:</label>
+        <select id="searchBy" value={searchBy} onChange={(e) => setSearchBy(e.target.value)}>
+          <option value="aadhar">Aadhar</option>
+          <option value="name">Name</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
 
       {/* Display search results */}
       <div className="search-results">
