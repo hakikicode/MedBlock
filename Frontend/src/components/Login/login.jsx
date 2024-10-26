@@ -56,33 +56,9 @@ const Login = () => {
         </video>
         {/* </div> */}
 
-
-
-{/*     
-    <div className="login-container">
-      <h2>Patient Login</h2>
-      <input
-        type="text"
-        value={adhar}
-        onChange={handleAdharChange}
-        placeholder="Enter your Aadhar Number"
-        className="login-input"
-        maxLength="12"
-      />
-      <button onClick={loginPatient}>Login</button>
-    </div> */}
-
     <div>
            
-            {/* <select className="dropdown1" onChange={handleChange}>
-            <option value="">Choose your Login Method</option>
-                <option value="showComponent">Sign Up</option>
-                <option value="hideComponent">Login</option>
-            </select>
-              
-           
-            {selectedOption === 'showComponent' && <SignUpPatient />}
-            {selectedOption === 'hideComponent' && <LoginPatient />} */}
+         
           <LoginPatient1/>
         </div>
 

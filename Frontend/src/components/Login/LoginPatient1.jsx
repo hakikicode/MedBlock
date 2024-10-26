@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom"; // For navigation
 import "./Login.css";
 import Navbar from "../Navbar/Navbar";
 import vid from "../../assets/d.mp4"
-import PatientSignUp from "../SignUp/patientSignUp";
+
 import logo from "../../assets/medblock-high-resolution-logo (1).png"
+
 
 const LoginPatient1 = () => {
   const [adhar, setAdhar] = useState("");
@@ -46,6 +47,7 @@ const LoginPatient1 = () => {
       console.error("Error fetching patient record:", error);
     }
   };
+  
 
   return (
     <>
@@ -72,8 +74,15 @@ const LoginPatient1 = () => {
         className="login-input"
         maxLength="12"
       />
+      <br/>
       <button onClick={loginPatient}>Login</button>
+      <div >
+      Don't Have account?
+      <button ><a href="http://localhost:3000/">Sign Up</a> </button>
     </div>
+    </div>
+
+
     
 
 
