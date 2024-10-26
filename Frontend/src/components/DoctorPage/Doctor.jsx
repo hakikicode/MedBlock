@@ -89,7 +89,7 @@ function Doctor() {
     } catch (e) {
       console.error("Error fetching medical record:", e);
       console.log("DOCTOR NOT CONNECTED");
-      return ["YOU ARE NOT A DOCTOR"];
+      return [];
     }
   };
 
@@ -120,8 +120,8 @@ function Doctor() {
       <div className="patient-details">
         <img src={patient.url} alt="Patient" className="patient-image" />
         <h3>{patient.name}</h3>
-        <p>Aadhar: {patient.aadhar}</p>
-        <p>Email: {patient.email}</p>
+      
+        
         {/* <p>Public Address: {patient.publicAddress}</p> */}
 
         {/* Render medical records */}
@@ -134,7 +134,7 @@ function Doctor() {
               </p>
             ))
           ) : (
-            <p>No medical records found</p>
+            <p>No medical records found Or Please Connect Verified Doctor wallet</p>
           )}
 
           <div>
