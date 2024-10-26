@@ -211,6 +211,7 @@ import logo from "../../assets/medblock-high-resolution-logo (1).png";
 import TypeWriterEffect from "react-typewriter-effect";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
+import Footer from "../Footer/Footer";
 
 function Doctor() {
   const [account, setAccount] = useState(null);
@@ -291,6 +292,8 @@ function Doctor() {
       return medicalRecord; // Return the fetched medical record
     } catch (e) {
       console.error("Error fetching medical record:", e);
+      console.log("DOCTOR NOT CONNECTED");
+      return ["YOU ARE NOT A DOCTOR"];
     }
   };
 
@@ -323,7 +326,7 @@ function Doctor() {
         <h3>{patient.name}</h3>
         <p>Aadhar: {patient.aadhar}</p>
         <p>Email: {patient.email}</p>
-        <p>Public Address: {patient.publicAddress}</p>
+        {/* <p>Public Address: {patient.publicAddress}</p> */}
 
         {/* Render medical records */}
         <div className="medical-records">
@@ -356,18 +359,19 @@ function Doctor() {
 
   return (
     <>
-      <Navbar />
       <div className="app-container">
         <video className="video" autoPlay loop muted id="video">
           <source src={vid} type="video/mp4" />
         </video>
+        
       </div>
 
-      <div className="pfp-container">
-        <img src={logo} alt="MedBlock" className="pfp" />
-      </div>
+     
 
-      {/* Search filter */}
+      
+
+     <div className="login-container">
+     
       <div className="search-filter">
         <label htmlFor="searchBy">Search by:</label>
         <select id="searchBy" value={searchBy} onChange={(e) => setSearchBy(e.target.value)}>
@@ -390,18 +394,22 @@ function Doctor() {
       {/* Display search results */}
       <div className="search-results">
         {filteredPatients.map((patient, index) => (
-          <div key={index} className="search-result" onClick={() => selectPatient(patient)}>
+          <div key={index} className="search-results-item" onClick={() => selectPatient(patient)}>
             <img src={patient.url} alt={patient.name} className="result-image" />
             <p>{patient.name}</p>
           </div>
         ))}
       </div>
-
+<div>
       {/* Render selected patient's details */}
       {renderPatientDetails()}
 
       {/* Action buttons */}
-      <button className="btn" onClick={connectWallet}>Connect Wallet</button>
+      <button onClick={connectWallet}>Connect Wallet</button>
+      </div>
+      </div>
+     
+      
     </>
   );
 }

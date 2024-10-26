@@ -178,7 +178,7 @@ import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom"; // Added Routes and useNavigate
 import Doctor from "./components/DoctorPage/Doctor"; // Correct path to Doctor component
 // import Web3AuthComponent from "./Components/Web3Auth";
-//import Patient from "./components/Patient/Patient"; // Import Patient component
+import Patient from "./components/PatientPage/patient"; // Import Patient component
 
 import Login from "./components/Login/login";
 
@@ -195,13 +195,14 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <div className="app-container">
         <video className="video" autoPlay loop muted id="video">
           <source src={vid} type="video/mp4" />
         </video>
+      </div>
 
-        <div className="app-navbar">
+        {/* <div className="app-navbar">
           <Link
             activeClass="active"
             to="home1"
@@ -234,8 +235,8 @@ function App() {
           >
             Sign Up
           </Link>
-        </div>
-
+        </div> */}
+      <div className="app-container1">
         <h2 className="welcome-2">
           <TypeWriterEffect
             startDelay={2000}
@@ -251,13 +252,12 @@ function App() {
           all in one place."
         </h3>
       </div>
+      
 
-      <div className="pfp-container">
-        <img src={logo} alt="MedBlock" className="pfp" />
-      </div>
-
-      <div style={styles.appContainer} id="home1">
+      <div className="app-container" id="home1">
+        
         <h1>Login Here</h1>
+        
 
         <Card
           imageSrc={doc}
@@ -269,11 +269,11 @@ function App() {
           imageSrc={patient}
           text1="Patients"
           text2="Click to Login"
-          onClick={() => handleClick("/Patient")} // Navigates to /Patient route
+          onClick={() => handleClick("/Login")} // Navigates to /Patient route
         />
       </div>
 
-      <div style={styles.appContainer} id="home2">
+      {/* <div style={styles.appContainer} id="home2">
         <h1>
           Sign Up<br></br> Bring all your reports<br></br> at the tip of your
           Fingers!
@@ -291,11 +291,12 @@ function App() {
           text2="Sign Up"
           onClick={() => handleClick("/Patient")} // Navigates to /Patient
         />
-      </div>
-      <PatientSignUp/>
-      <Login/>
+      </div> */}
+      
+        
+        <Footer />
+       
 
-      <Footer />
     </>
   );
 }
@@ -303,8 +304,11 @@ function App() {
 const styles = {
   appContainer: {
     display: "flex",
+    
     padding: 20,
-    gap: "40px",
+    
+    width: 1920,
+    gap: "50px",
     justifyContent: "center",
     alignItems: "center",
     height: "80vh",
@@ -319,8 +323,8 @@ function MainApp() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/Doctor" element={<Doctor />} />
-        {/* <Route path="/Patient" element={<Patient />} /> */}
-        {/* <Route path="/Web3" element={<Web3AuthComponent />} /> */}
+        <Route path="/Patient" element={<Patient />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="/Patient" element={<PatientPage />} />
       </Routes>
     </Router>

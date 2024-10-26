@@ -4,8 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .app-container {
-  position: relative;
+  position: absolute;
   text-align: center;
+  width: 100%;
   color: white;
 }
 
@@ -34,31 +35,71 @@
 
 .search-bar {
   margin: 20px auto;
+  position: flex;
   padding: 10px;
-  width: 80%;
+  
+  width: 60%; /* Adjusted for better centering */
+  max-width: 600px; /* Optional: limits width on larger screens */
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #0202c9;
+  background-color: #000065;
+  color: #333;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  /* Centering within a container */
+  display: block;
 }
 
+.search-bar:focus {
+  outline: none;
+}
+
+.search-bar:hover {
+  box-shadow: 0 0 10px rgba(123, 104, 238, 0.7),
+              0 0 20px rgba(75, 0, 130, 0.5),
+              0 0 30px rgba(123, 104, 238, 0.3);
+}
+
+
+/* Container for the grid */
 .search-results {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px; /* 3 items per row */
+  
+  position: flex;
+  top: 30%;
+  
+  gap: 20px; /* Space between items */
+  width: 100%; /* Full width */
+  margin: 20px auto;
 }
 
-.search-result {
-  background-color: rgba(255, 255, 255, 0.1);
+
+/* Styling for each result item */
+.search-results-item {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: center;
+  
+  padding: 20px;
   border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-  cursor: pointer;
+  color: #fff;
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-result:hover {
-  transform: scale(1.05);
+/* Hover effect for each result item */
+.search-results-item:hover {
+  transform: scale(1.05); /* Slightly enlarges the item */
+  box-shadow: 0 0 10px rgba(123, 104, 238, 0.7),
+              0 0 20px rgba(75, 0, 130, 0.5),
+              0 0 30px rgba(123, 104, 238, 0.3); /* Adds a glow */
 }
+
+
+
+
 
 .result-image {
   width: 100px;
@@ -94,7 +135,9 @@
 
 .btn {
   margin-top: 20px;
-  padding: 10px 20px;
+  position: absolute;
+  left: 50%;
+  align-items: center;
   background-color: #4CAF50;
   border: none;
   border-radius: 5px;
@@ -361,3 +404,4 @@
   box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
+

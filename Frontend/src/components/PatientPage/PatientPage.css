@@ -26,8 +26,10 @@
   .patient-image {
     border-radius: 50%;
     width: 150px;
+    align-self: center;
     height: 150px;
     margin-bottom: 20px;
+    
   }
   
   .sidebar h3 {
@@ -43,11 +45,15 @@
   
   /* Main content styling */
   .main-content {
-    width: 75%;
+    width: 100%; /* Full width of the page */
     padding: 30px;
     overflow-y: auto;
-    background-color: #fff;
-  }
+    background-color: #4B0082; /* Purplish-blue background */
+    color: white; /* White text for contrast */
+    min-height: 100vh; /* Ensures it fills the viewport height */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
   
   /* Medical Records Section */
   .medical-records {
@@ -57,7 +63,8 @@
   .records-content {
     padding: 10px;
     background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    border: 1px solid #0088ff;
+    background-color: #4B0082;
     border-radius: 5px;
     font-size: 16px;
   }
@@ -134,6 +141,7 @@
 
 .app-container {
   position: relative;
+  top: 10%;
   text-align: center;
   color: white;
 }

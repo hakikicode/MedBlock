@@ -1,21 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+/* Centering the login container and applying theme colors */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 50px auto;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2e2a5c; /* Deep purple-blue background */
+  padding: 40px; /* Increased padding for more space */
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(75, 0, 130, 0.2);
+  max-width: 600px; /* Increased max width for a larger container */
+  width: 100%; /* Ensure it takes full width up to max-width */
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 400px; /* Optional: set a minimum height for the container */
+}
+
+
+/* Input field styling with hover effects */
+.login-input {
+  padding: 12px;
+  border: 1px solid #6a5acd; /* Soft purplish border */
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #f0f0ff;
+  color: #2e2a5c;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for input fields */
+.login-input:hover,
+.login-input:focus {
+  box-shadow: 0 0 10px rgba(123, 104, 238, 0.6);
+  transform: scale(1.02); /* Slight enlargement */
+  border-color: #7b68ee; /* Darker purple for hover effect */
+}
+
+/* Styling for button inside the container */
+.login-button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: #6a5acd; /* Purple button color */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for button */
+.login-button:hover {
+  box-shadow: 0 0 15px rgba(123, 104, 238, 0.7);
+  transform: scale(1.05);
+  background-color: #7b68ee; /* Slightly brighter purple on hover */
+}
+
+
+
+
+.video {
+  display: flex;
   
-  .login-input {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.welcome {
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 1700; /* Bold weight */
+  font-size: 56px;  /* Suitable size for app name */
+  letter-spacing: 1.5px; /* Adjust letter spacing */
+  color: #9deeab; /* Example color */
+}
+
+.welcome-2 {
+  width: max-content;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  position: absolute;
+  top: 40%;
+  
+  transition-duration: 1s;
+  left: 10%;
+}
+
+.welcome-2:hover {
+  transition: 1s;
+  font-display: bold;
+  box-sizing: content-box;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  width: fit-content;
+  cursor: pointer;
+  color: antiquewhite;
+}
+
+.welcome-3 {
+  
+  width: max-content;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  position: absolute;
+  top: 60%;
+  
+  transition-duration: 1s;
+  left: 10%;
+}
+.app-navbar {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(13, 0, 70, 1);
+  padding-right: 30px;
+  margin-bottom: 20px;
+  z-index: 5;
+}
+
+.app-navbar a {
+  color: white;
+  float: right;
+  padding: 16px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+
+.app-navbar a:hover {
+  background-color: rgba(2, 0, 14, 0.852);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.pfp {
+    width: 200px;
+    position: absolute;
+    top: 5%;
+    left: 34%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
-  }
-  
+    box-sizing: border-box;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+    
+}
+
+body {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items to the top */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+.dropdown1 {
+  margin-top: 20%; /* Space from the top */
+  padding: 10px; /* Padding for the dropdown */
+  font-size: 1.2rem; /* Increase font size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #6a5acd; /* Purplish-blue background */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.dropdown1:hover {
+  background-color: #5b4bcd; /* Darker shade on hover */
+}

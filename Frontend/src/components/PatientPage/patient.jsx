@@ -126,10 +126,14 @@ import { useNavigate } from "react-router-dom";
 import "./PatientPage.css"; // CSS for the page
 
 import { getMedicalRecord } from "../../utils/web3";
-
+import vid from "../../assets/d.mp4"
 import heart from "../../assets/heart.png";
 import brain from "../../assets/brain.png";
 import lungs from "../../assets/lungs.png";
+import Login from "../Login/login"
+import PatientSignUp from "../SignUp/patientSignUp";
+import Navbar from "../Navbar/Navbar";
+
 
 const PatientPage = () => {
   const patient = usePatients((state) => state.newPatient);
@@ -139,7 +143,7 @@ const PatientPage = () => {
   // Redirect if no patient is logged in
   useEffect(() => {
     if (!patient) {
-      navigate("/");
+     navigate("/");
       return;
     }
     getMedicalRecords();
@@ -180,6 +184,17 @@ const PatientPage = () => {
   };
 
   return (
+    <>
+    <div>
+    <Navbar/>
+    </div>
+
+
+        <video className="video" autoPlay loop muted id="video">
+          <source src={vid} type="video/mp4" />
+        </video>
+        
+
     <div className="patient-page-container">
       {/* Sidebar */}
       <div className="sidebar">
@@ -223,6 +238,9 @@ const PatientPage = () => {
         </div>
       </div>
     </div>
+    {/* <PatientSignUp/> */}
+    
+    </>
   );
 };
 

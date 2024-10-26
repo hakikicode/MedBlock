@@ -4,7 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 
-
+body{
+  font-family: "Montserrat", sans-serif;
+}
 
 .video {
   display: flex;
@@ -16,7 +18,7 @@
 }
 
 .app-container {
-  width: 100%;
+  width: 150%;
   color: rgb(255, 255, 255);
   display: 'flex';
   padding: 20;
@@ -105,10 +107,10 @@
 }
 
 .pfp {
-    width: 300px;
+    width: 500px;
     position: absolute;
-    top: 12%;
-    left: 10%;
+    top: 1%;
+    left: 0%;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 50%;
@@ -255,4 +257,47 @@
   font-weight: bolder;
   box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
   cursor: pointer;
+}
+
+.app-container {
+  display: flex;
+  padding: 20px;
+  width: 1920px; /* Ensure to specify units (px) */
+  gap: 40px; /* Space between flex items */
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* 80% of the viewport height */
+  color: white; /* Text color */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2e2a5c; /* Deep purple-blue background */
+  padding: 40px; /* Increased padding for more space */
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(75, 0, 130, 0.2);
+  max-width: 600px; /* Increased max width for a larger container */
+  width: 100%; /* Ensure it takes full width up to max-width */
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 400px; /* Optional: set a minimum height for the container */
+}
+
+.app-container1 {
+  width: 100%; /* Full width to fill the viewport */
+  display: flex;
+  padding: 20px;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: transparent; /* No background color */
+  color: white; /* Text color for elements within */
+  border: none; /* Ensure no border */
 }

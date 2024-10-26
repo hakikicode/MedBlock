@@ -68,7 +68,7 @@ const PatientSignUp = () => {
   };
 
   return (
-    <div className="signup-container">
+    <div className="login-container">
       <h2>Patient Sign-Up</h2>
       <form className="signup-form" onSubmit={handleSubmit}>
         <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
@@ -83,7 +83,7 @@ const PatientSignUp = () => {
           <option value="Female">Female</option>
         </select>
         <input type="text" name="adhar" value={formData.adhar} onChange={handleChange} placeholder="Aadhar" required />
-        <button type="submit" className="signup-btn">Sign Up</button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );

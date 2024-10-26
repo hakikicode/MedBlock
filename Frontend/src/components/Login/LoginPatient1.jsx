@@ -6,9 +6,9 @@ import "./Login.css";
 import Navbar from "../Navbar/Navbar";
 import vid from "../../assets/d.mp4"
 import PatientSignUp from "../SignUp/patientSignUp";
-import LoginPatient1 from "./LoginPatient1";
+import logo from "../../assets/medblock-high-resolution-logo (1).png"
 
-const Login = () => {
+const LoginPatient1 = () => {
   const [adhar, setAdhar] = useState("");
   const setNewPatient = usePatients((state) => state.setNewPatient); // Zustand action
   const navigate = useNavigate(); // Navigation hook
@@ -50,16 +50,19 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      {/* <div className="app-container"> */}
+      
         <video className="video" autoPlay loop muted id="video">
           <source src={vid} type="video/mp4" />
         </video>
-        {/* </div> */}
+        
 
 
 
-{/*     
+    
     <div className="login-container">
+    <div className="pfp-container1">
+        <img src={logo} alt="MedBlock" className="pfp" />
+      </div>
       <h2>Patient Login</h2>
       <input
         type="text"
@@ -70,21 +73,8 @@ const Login = () => {
         maxLength="12"
       />
       <button onClick={loginPatient}>Login</button>
-    </div> */}
-
-    <div>
-            {/* Dropdown to select options */}
-            <select className="dropdown1" onChange={handleChange}>
-            <option value="">Select an option</option>
-                <option value="showComponent">Sign Up</option>
-                <option value="hideComponent">Login</option>
-            </select>
-
-            {/* Step 3: Conditional rendering */}
-            {selectedOption === 'showComponent' && <SignUpPatient />}
-            {selectedOption === 'hideComponent' && <LoginPatient />}
-
-        </div>
+    </div>
+    
 
 
 
@@ -92,20 +82,4 @@ const Login = () => {
   );
 };
 
-const SignUpPatient = () => {
-  return (
-      <div>
-          <PatientSignUp/>
-      </div>
-  );
-};
-
-const LoginPatient = () => {
-  return (
-      <div>
-          <LoginPatient1/>
-      </div>
-  );
-};
-
-export default Login;
+export default LoginPatient1;
